@@ -30,6 +30,7 @@ body {
     padding: 1rem;
     border-radius: 10px;
     backdrop-filter: blur(2px);
+    transition: all 0.3s ease;
 }
 
 .textOverlay h2,
@@ -37,6 +38,21 @@ body {
 .textOverlay p {
     color: #fff;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for text */
+.textOverlay:hover h2,
+.textOverlay:hover h3 {
+    color: #ffd700; /* golden highlight */
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+.textOverlay:hover p {
+    color: #f0f0f0;
+    transform: scale(1.02);
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
 }
 
 /* Left Box */
