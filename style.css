@@ -10,32 +10,34 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .main {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-   align-content: center;
-    padding: 20px;
-    width: 95%;
-    height: 100%;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .leftBox {
     flex: 1;
-    min-width: 250px;
+    min-width: 280px;
     background-image: url('1.jpg');
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 40px;
+    padding: 2rem;
     text-align: center;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 80%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
 }
 
 .leftBox:hover {
@@ -43,95 +45,83 @@ body {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-
 .rightBox {
     flex: 2;
-    min-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    min-width: 300px;
 }
 
-.fristBox {
+.firstBox,
+.thirdBox {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 150px;
+}
+
+.firstBox {
     background-image: url('2.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 40px;
-    text-align: center;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 35%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.fristBox:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-
-.secondBox {
-    display: flex;
-    gap: 20px;
-}
-
-.second-2 {
-    flex: 1;
-    background-image: url('3.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 40px;
-    text-align: center;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-height: 23vh;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.second-1 {
-    flex: 1;
-    background-image: url('4.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 40px;
-    text-align: center;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-height: 23vh;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.second-1:hover, .second-2:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .thirdBox {
     background-image: url('6.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 40px;
-    text-align: center;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 35%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.firstBox:hover,
 .thirdBox:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+.secondBox {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.second-1,
+.second-2 {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.second-1 {
+    background-image: url('4.jpg');
+}
+
+.second-2 {
+    background-image: url('3.jpg');
+}
+
+.second-1:hover,
+.second-2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* -----------------
+   Responsive Styles
+------------------ */
 
 @media (max-width: 768px) {
     .main {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
     }
 
     .leftBox, .rightBox {
@@ -142,7 +132,27 @@ body {
         flex-direction: column;
     }
 
-    .second-1, .second-2 {
+    .second-1,
+    .second-2 {
         width: 100%;
+    }
+
+    .leftBox,
+    .firstBox,
+    .second-1,
+    .second-2,
+    .thirdBox {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .leftBox,
+    .firstBox,
+    .second-1,
+    .second-2,
+    .thirdBox {
+        padding: 1rem;
+        font-size: 0.95rem;
     }
 }
