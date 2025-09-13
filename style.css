@@ -15,7 +15,7 @@ body {
     padding: 20px;
 }
 
-/* Main Layout */
+/* Main container */
 .main {
     display: flex;
     flex-wrap: wrap;
@@ -24,12 +24,12 @@ body {
     max-width: 1200px;
 }
 
-/* Text Overlay for Readability */
+/* Text overlay to improve readability on images */
 .textOverlay {
     background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
     padding: 1rem;
     border-radius: 10px;
-    backdrop-filter: blur(2px); /* optional blur */
+    backdrop-filter: blur(2px);
 }
 
 .textOverlay h2,
@@ -46,7 +46,6 @@ body {
     background-image: url('1.jpg');
     background-size: cover;
     background-position: center;
-    color: white;
     padding: 2rem;
     text-align: center;
     border-radius: 20px;
@@ -55,7 +54,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto;
+    min-height: 35vh;
 }
 
 .leftBox:hover {
@@ -63,7 +62,7 @@ body {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Right Container */
+/* Right Column Container */
 .rightBox {
     flex: 2;
     display: flex;
@@ -72,21 +71,20 @@ body {
     min-width: 300px;
 }
 
-/* First and Third Boxes */
+/* Top and Bottom Boxes in Right Column */
 .firstBox,
 .thirdBox {
     background-size: cover;
     background-position: center;
-    color: white;
     padding: 2rem;
     text-align: center;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 150px;
+    min-height: 30vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .firstBox {
@@ -103,28 +101,27 @@ body {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Second Row (Two Boxes Side-by-Side) */
+/* Middle Row with Two Side-by-Side Cards */
 .secondBox {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .second-1,
 .second-2 {
-    flex: 1;
+    flex: 1 1 48%;
     background-size: cover;
     background-position: center;
-    color: white;
     padding: 2rem;
     text-align: center;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 150px;
+    min-height: 30vh;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .second-1 {
@@ -141,25 +138,31 @@ body {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Design */
+/* --- Responsive Layout --- */
+
+/* Tablet & Medium Devices */
 @media (max-width: 768px) {
     .main {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .leftBox,
     .rightBox {
-        width: 100%;
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 
     .secondBox {
-        flex-direction: column;
+        flex-wrap: wrap;
+        flex-direction: row;
     }
 
     .second-1,
     .second-2 {
-        width: 100%;
+        flex: 1 1 48%;
+        min-width: 48%;
     }
 
     .leftBox,
@@ -171,7 +174,14 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+/* Small Mobile Devices */
+@media (max-width: 500px) {
+    .second-1,
+    .second-2 {
+        flex: 1 1 100%;
+        min-width: 100%;
+    }
+
     .leftBox,
     .firstBox,
     .second-1,
